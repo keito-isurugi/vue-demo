@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<script></script>
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<div
+			class="static"
+			v-bind:class="{ active: isActive, 'text-danger': hasError }"
+		>動的にクラスをつける</div>
+		<button v-on:click="chageIsActive()">クラス変更</button>
+		<div v-bind:class="classObject">動的にクラスをつける</div>
+		<div v-bind:class="[activeClass, errorClass]">配列構文</div>
+		<div v-bind:class="[isActive ? activeClass : '', errorClass]">配列構文、三項演算子</div>
+		<my-component class="baz boo"></my-component>
+		<my-component v-bind:class="{ active: isActive }"></my-component>
+
+		<div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">インラインスタイル</div>
+		<div v-bind:style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }"></div>
+	</div>
+	<script src="./js/05_classes_and_bindings.html.js"></script>
+</body>
+</html>
