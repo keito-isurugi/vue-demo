@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<script></script>
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<p>Original message: "{{ message }}"</p>
+  	<p>Computed reversed message: "{{ reversedMessage }}"</p>
+		<input v-model="firstName" placeholder="firstName">
+    <input v-model="lastName" placeholder="lastName">
+    <p>firstName: {{ firstName }}</p>
+    <p>lastName: {{ lastName }}</p>
+    <p>fullName: {{ fullName }}</p>
+		<!-- <input v-model="now" placeholder="now"> -->
+		<!-- <p>時間：{{ now }}</p> -->
+		<p>時間：{{ now() }}</p>
+	</div>
+	<script src="./js/04_computed_properties_and_watchers.js"></script>
+</body>
+</html>

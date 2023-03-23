@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<script></script>
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<p>{{ message }}</p>
+		<p>{{ message_1 }}</p>
+		<span v-bind:title="message_2">
+			Hover your mouse over me for a few seconds
+			to see my dynamically bound title!
+		</span>
+		<p v-if="seen">seen is true</p>
+		<p v-if="!seen">seen is false</p>
+		<ol>
+			<!--
+				各 todo-item の内容を表す todo オブジェクトを与えます。
+				これにより内容は動的に変化します。
+				また後述する "key" を各コンポーネントに提供する必要があります。
+			-->
+			<todo-item
+				v-for="item in groceryList"
+				v-bind:todo="item"
+				v-bind:key="item.id"
+			></todo-item>
+		</ol>
+  	<button v-on:click="reverseMessage">Reverse Message</button>
+		<input v-model="message">
+	</div>
+	
+	<script src="./js/01_start.js"></script>
+</body>
+</html>

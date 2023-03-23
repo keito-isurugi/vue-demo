@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<script></script>
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+			<p>Message: {{ msg }}</p>
+			<p v-once>This will never change: {{ msg }}</p>
+			<p v-bind:id="id">属性</p>
+			<button v-bind:disabled="isButtonDisabled">Button</button>
+			<p>{{ number + 1 }}</p>
+			<p>{{ ok ? 'YES' : 'NO' }}</p>
+			<p>{{ msg.split('').reverse().join('') }}</p>
+			<div v-bind:id="'list-' + id"></div>
+			<p v-if="seen">seen is true</p>
+	</div>
+	<script src="./js/03_template_syntax.js"></script>
+</body>
+</html>
