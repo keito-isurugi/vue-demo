@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<script></script>
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<button-counter></button-counter>
+		<button-counter></button-counter>
+  	<button-counter></button-counter>
+
+		<blog-post title="My journey with Vue" sub-title="hoge"></blog-post>
+		<blog-post title="Blogging with Vue" sub-title="foo"></blog-post>
+		<blog-post title="Why Vue is so fun" sub-title="buzz"></blog-post>
+
+		<blog-post2
+			v-for="post in posts"
+			v-bind:key="post.id"
+			v-bind:post="post"
+		></blog-post2>
+
+		<div :style="{ fontSize: postFontSize + 'em' }">
+			<blog-post2
+				v-for="post in posts"
+				v-bind:key="post.id"
+				v-bind:post="post"
+				v-on:enlarge-text="onEnlargeText"
+			></blog-post2>
+				<!-- v-on:enlarge-text="postFontSize += $event" -->
+		</div>
+
+		<br>
+		<!-- <custom-input v-model="searchText()"></custom-input> -->
+		<!-- <p>{{ text }}</p> -->
+
+		<alert-box>
+			Something bad happened.
+		</alert-box>
+
+
+	</div>
+	<script src="./js/10_component_basics.js"></script>
+</body>
+</html>
