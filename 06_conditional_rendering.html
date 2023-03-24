@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<script></script>
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<p v-if="awesome">Vue is awesome!</p>
+		<p v-else>Oh no 😢</p>
+		<button v-on:click="changeAwesome()">表示切り替え</button>
+
+		<div v-if="Math.random() > 0.5">
+			Now you see me
+		</div>
+		<div v-else>
+			Now you don't
+		</div>
+
+		<div v-if="type === 'A'">
+			A
+		</div>
+		<div v-else-if="type === 'B'">
+			B
+		</div>
+		<div v-else-if="type === 'C'">
+			C
+		</div>
+		<div v-else>
+			Not A/B/C
+		</div>
+
+		<template v-if="loginType === 'username'">
+			<label>Username</label>
+			<input placeholder="Enter your username" key="username-input">
+		</template>
+		<template v-else>
+			<label>Email</label>
+			<input placeholder="Enter your email address" key="email-input">
+		</template>
+		<button @click="changeLoginType()">ログインタイプ切り替え</button>
+
+		<h1 v-show="awesome">Hello!</h1>
+	</div>
+	<script src="./js/06_conditional_rendering.js"></script>
+</body>
+</html>
