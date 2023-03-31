@@ -9,8 +9,8 @@ export default {
       url: './about'
     },
     {
-      name: 'WORK',
-      url: '#'
+      name: 'TODO',
+      url: './todo'
     },
     {
       name: 'SERVICE',
