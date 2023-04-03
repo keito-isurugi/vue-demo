@@ -1,22 +1,43 @@
 <template>
 	<div>
 		<h1>Todo</h1>
+		<h2>Todos</h2>
 		<ul v-for="(todo, index) in todos" :key="index">
 			<div class="d-flex">
 				<li>ID：{{ todo.id }}、Title：{{ todo.title }}、Content：{{ todo.content }}</li>
-				<button :id="todo.id" @click="deleteTodo(index)">delete</button>
+				<v-btn color="#D50000" class="white--text" :id="todo.id" @click="deleteTodo(index)">delete</v-btn>
 			</div>
 		</ul>
 
 		<br>
 
 		<div>
-			<label for="title">title</label>
-			<input v-model="title" id="title" type="text" placeholder="title">
-			<label for="content">content</label>
-			<input v-model="content" id="content" type="text" placeholder="content">
-			<button @click="addTodo">add</button>
+			<h2>Add Todo</h2>
+			<div class="input-wrap">
+				<v-text-field
+					v-model="title"
+					label="Title"
+					:rules="rules"
+					hide-details="auto"
+				></v-text-field>
+				<v-text-field
+					v-model="content"
+					label="Content"
+					:rules="rules"
+					hide-details="auto"
+				></v-text-field>
+				<v-btn color="#2196F3" class="white--text" @click="addTodo">add</v-btn>
+			</div>
 		</div>
+
+		<v-btn
+			v-for="(item, index) in items"
+			:key="index"
+			:value="index"
+			@click="buttonClicked(index)"
+		>
+			{{ item }}
+		</v-btn>
 	</div>
 </template>
 
@@ -36,7 +57,8 @@
 					{id:4, title: 'title4', content: "This is content 4."},
 					{id:5, title: 'title5', content: "This is content 5."},
 					{id:6, title: 'title6', content: "This is content 5."},
-				]
+				],
+				items: ['Button 1', 'Button 2', 'Button 3'],
 			}
 		},
 		methods: {
@@ -57,8 +79,17 @@
 				} else {
 					alert("タイトル、内容を入力してください。")
 				}
-			}
+			},
+			buttonClicked(id) {
+				console.log('Clicked button with id ' + id);
+			},
 		}
   })
 	
 </script>
+
+<style scoped>
+	.input-wrap {
+		width: 30%;
+	}
+</style>
