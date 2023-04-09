@@ -62,7 +62,7 @@
 			}
 		},
 		methods: {
-			deleteTodo(index) {
+			deleteTodo(index: any) {
 				this.todos.splice(index, 1)
 			},
 			addTodo() {
@@ -80,7 +80,7 @@
 					alert("タイトル、内容を入力してください。")
 				}
 			},
-			buttonClicked(id) {
+			buttonClicked(id: string) {
 				console.log('Clicked button with id ' + id);
 			},
 		}
