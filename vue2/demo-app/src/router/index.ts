@@ -3,7 +3,7 @@ import VueRouter, { RouteConfig } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import TodoView from '../components/pages/TodoView.vue'
-import ApiView from '../components/pages/ApiView.vue'
+import DemoView from '../components/pages/DemoView.vue'
 
 Vue.use(VueRouter)
 
@@ -19,15 +19,10 @@ const routes: Array<RouteConfig> = [
     component: AboutView
   },
   {
-    path: '/todo',
-    name: 'todo',
-    component: TodoView
+    path: '/demo',
+    name: 'demo',
+    component: DemoView
   },
-  {
-    path: '/api',
-    name: 'api',
-    component: ApiView
-  }
 ]
 
 const router = new VueRouter({

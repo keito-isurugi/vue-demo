@@ -13,8 +13,8 @@ export default {
       url: './todo'
     },
     {
-      name: 'API',
-      url: './api'
+      name: 'DEMO',
+      url: './demo'
     },
     {
       name: 'BLOG',
