@@ -3,6 +3,7 @@
 		<h1>Demo</h1>
 		<ApiDemo />
 		<VuexDemo />
+		<DndDemo />
 	</div>
 </template>
 
@@ -10,6 +11,7 @@
   import Vue from 'vue'
 	import ApiDemo from '../molecules/demo/ApiDemo.vue'
 	import VuexDemo from '../molecules/demo/VuexDemo.vue'
+	import DndDemo from '../molecules/demo/DndDemo.vue'
 
   export default Vue.extend({
     name: 'Demo',
@@ -19,7 +21,8 @@
 		},
 		components: {
 			ApiDemo,
-			VuexDemo
+			VuexDemo,
+			DndDemo
 		},
 		methods: {
 		},
