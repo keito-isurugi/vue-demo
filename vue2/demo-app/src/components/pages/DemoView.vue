@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="demo-wrap">
 		<h1>Demo</h1>
 		<ApiDemo />
 		<VuexDemo />
@@ -37,4 +37,7 @@
 </script>
 
 <style scoped>
+	.demo-wrap {
+		padding-bottom: 100px;
+	}
 </style>
