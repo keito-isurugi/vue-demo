@@ -4,6 +4,8 @@
 		<ApiDemo />
 		<VuexDemo />
 		<DndDemo />
+		<LazyloadDemo />
+		<DatepickerDemo />
 	</div>
 </template>
 
@@ -12,6 +14,8 @@
 	import ApiDemo from '../molecules/demo/ApiDemo.vue'
 	import VuexDemo from '../molecules/demo/VuexDemo.vue'
 	import DndDemo from '../molecules/demo/DndDemo.vue'
+	import LazyloadDemo from '../molecules/demo/LazyloadDemo.vue'
+	import DatepickerDemo from '../molecules/demo/DatepickerDemo.vue'
 
   export default Vue.extend({
     name: 'Demo',
@@ -22,7 +26,9 @@
 		components: {
 			ApiDemo,
 			VuexDemo,
-			DndDemo
+			DndDemo,
+			LazyloadDemo,
+			DatepickerDemo,
 		},
 		methods: {
 		},

@@ -13,6 +13,7 @@
     "useDefineForClassFields": true,
     "sourceMap": true,
     "baseUrl": ".",
+    "typeRoots": ["./types", "./node_modules/@types"],
     "types": [
       "webpack-env",
       "vuetify"
@@ -34,8 +35,9 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
-  ],
+    "tests/**/*.tsx",
+    "types/**/*"
+, "types/importImage.d.ts"  ],
   "exclude": [
     "node_modules"
   ]

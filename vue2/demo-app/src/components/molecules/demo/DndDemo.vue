@@ -11,7 +11,7 @@
 		</draggable>
 		
 		<div id="box1" class="box">
-			<draggable tag="ul" :options="{group:'ITEMS'}"  @end="onEnd">
+			<draggable tag="ul" :options="{group:'ITEMS'}">
 				<li v-for="item in items2" :key="item.no">{{item.name}}-(No.{{item.no}})</li>
 			</draggable>
 		</div>
