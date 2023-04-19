@@ -9,6 +9,7 @@
 		<VueTyperDemo />
 		<VmdEditorDemo />
 		<VueGoodTableDemo />
+		<VueGoTopDemo />
 	</div>
 </template>
 
@@ -22,6 +23,7 @@
 	import VueTyperDemo from '../molecules/demo/VueTyperDemo.vue'
 	import VmdEditorDemo from '../molecules/demo/VmdEditorDemo.vue'
 	import VueGoodTableDemo from '../molecules/demo/VueGoodTableDemo.vue'
+	import VueGoTopDemo from '../molecules/demo/VueGoTopDemo.vue'
 
   export default Vue.extend({
     name: 'Demo',
@@ -38,6 +40,7 @@
 			VueTyperDemo,
 			VmdEditorDemo,
 			VueGoodTableDemo,
+			VueGoTopDemo,
 		},
 		methods: {
 		},
