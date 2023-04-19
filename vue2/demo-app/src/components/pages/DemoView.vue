@@ -10,6 +10,7 @@
 		<VmdEditorDemo />
 		<VueGoodTableDemo />
 		<VueGoTopDemo />
+		<IconsDemo />
 	</div>
 </template>
 
@@ -24,6 +25,7 @@
 	import VmdEditorDemo from '../molecules/demo/VmdEditorDemo.vue'
 	import VueGoodTableDemo from '../molecules/demo/VueGoodTableDemo.vue'
 	import VueGoTopDemo from '../molecules/demo/VueGoTopDemo.vue'
+	import IconsDemo from '../molecules/demo/IconsDemo.vue'
 
   export default Vue.extend({
     name: 'Demo',
@@ -41,6 +43,7 @@
 			VmdEditorDemo,
 			VueGoodTableDemo,
 			VueGoTopDemo,
+			IconsDemo,
 		},
 		methods: {
 		},
@@ -53,3 +56,5 @@
 		padding-bottom: 100px;
 	}
 </style>
+
+
