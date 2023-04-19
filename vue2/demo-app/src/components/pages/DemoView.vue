@@ -7,6 +7,7 @@
 		<LazyloadDemo />
 		<DatepickerDemo />
 		<VueTyperDemo />
+		<VmdEditorDemo />
 	</div>
 </template>
 
@@ -18,6 +19,7 @@
 	import LazyloadDemo from '../molecules/demo/LazyloadDemo.vue'
 	import DatepickerDemo from '../molecules/demo/DatepickerDemo.vue'
 	import VueTyperDemo from '../molecules/demo/VueTyperDemo.vue'
+	import VmdEditorDemo from '../molecules/demo/VmdEditorDemo.vue'
 
   export default Vue.extend({
     name: 'Demo',
@@ -32,6 +34,7 @@
 			LazyloadDemo,
 			DatepickerDemo,
 			VueTyperDemo,
+			VmdEditorDemo,
 		},
 		methods: {
 		},
