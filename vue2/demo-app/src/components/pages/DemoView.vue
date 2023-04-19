@@ -8,6 +8,7 @@
 		<DatepickerDemo />
 		<VueTyperDemo />
 		<VmdEditorDemo />
+		<VueGoodTableDemo />
 	</div>
 </template>
 
@@ -20,6 +21,7 @@
 	import DatepickerDemo from '../molecules/demo/DatepickerDemo.vue'
 	import VueTyperDemo from '../molecules/demo/VueTyperDemo.vue'
 	import VmdEditorDemo from '../molecules/demo/VmdEditorDemo.vue'
+	import VueGoodTableDemo from '../molecules/demo/VueGoodTableDemo.vue'
 
   export default Vue.extend({
     name: 'Demo',
@@ -35,6 +37,7 @@
 			DatepickerDemo,
 			VueTyperDemo,
 			VmdEditorDemo,
+			VueGoodTableDemo,
 		},
 		methods: {
 		},
