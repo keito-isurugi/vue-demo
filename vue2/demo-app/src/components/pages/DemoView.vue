@@ -11,6 +11,7 @@
 		<VueGoodTableDemo />
 		<VueGoTopDemo />
 		<IconsDemo />
+		<VueChartjsDemo />
 	</div>
 </template>
 
@@ -26,6 +27,7 @@
 	import VueGoodTableDemo from '../molecules/demo/VueGoodTableDemo.vue'
 	import VueGoTopDemo from '../molecules/demo/VueGoTopDemo.vue'
 	import IconsDemo from '../molecules/demo/IconsDemo.vue'
+	import VueChartjsDemo from '../molecules/demo/VueChartjsDemo.vue'
 
   export default Vue.extend({
     name: 'Demo',
@@ -44,6 +46,7 @@
 			VueGoodTableDemo,
 			VueGoTopDemo,
 			IconsDemo,
+			VueChartjsDemo,
 		},
 		methods: {
 		},
