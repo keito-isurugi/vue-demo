@@ -6,3 +6,5 @@ declare module '@kangc/v-md-editor/lib/theme/github.js'
 declare module '@kangc/v-md-editor/lib/lang/en-US'
 declare module 'vue-good-table'
 declare module '@inotom/vue-go-top'
+declare module 'vue-progressbar'
+
