@@ -19,6 +19,11 @@ const routes: Array<RouteConfig> = [
     component: AboutView
   },
   {
+    path: '/todo',
+    name: 'todo',
+    component: TodoView
+  },
+  {
     path: '/demo',
     name: 'demo',
     component: DemoView

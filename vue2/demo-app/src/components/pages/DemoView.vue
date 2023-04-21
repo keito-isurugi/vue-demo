@@ -12,6 +12,7 @@
 		<VueGoTopDemo />
 		<IconsDemo />
 		<VueChartjsDemo />
+		<VeeValidateDemo />
 	</div>
 </template>
 
@@ -28,6 +29,7 @@
 	import VueGoTopDemo from '../molecules/demo/VueGoTopDemo.vue'
 	import IconsDemo from '../molecules/demo/IconsDemo.vue'
 	import VueChartjsDemo from '../molecules/demo/VueChartjsDemo.vue'
+	import VeeValidateDemo from '../molecules/demo/VeeValidateDemo.vue'
 
   export default Vue.extend({
     name: 'Demo',
@@ -47,6 +49,7 @@
 			VueGoTopDemo,
 			IconsDemo,
 			VueChartjsDemo,
+			VeeValidateDemo,
 		},
 		methods: {
 		},
