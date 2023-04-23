@@ -63,15 +63,25 @@
 					tel: "",
 				},
 				users: [
-					{id:1, name: "suzuki", email: "test1email.com", tel: "111-1111-1111"},
-					{id:2, name: "suzuki", email: "test2email.com", tel: "222-2222-2222"},
-					{id:3, name: "suzuki", email: "test3email.com", tel: "333-3333-3333"},
-					{id:4, name: "suzuki", email: "test4email.com", tel: "444-4444-4444"},
-					{id:5, name: "suzuki", email: "test5email.com", tel: "555-5555-5555"},
+					{id:1, name: "test1", email: "test1email.com", tel: "111-1111-1111"},
+					{id:2, name: "test2", email: "test2email.com", tel: "222-2222-2222"},
+					{id:3, name: "test3", email: "test3email.com", tel: "333-3333-3333"},
+					{id:4, name: "test4", email: "test4email.com", tel: "444-4444-4444"},
+					{id:5, name: "test5", email: "test5email.com", tel: "555-5555-5555"},
 				]
 			}
 		},
 		methods: {
+			submit() {
+			this.user.id = this.users.length + 1;
+			this.users.push(this.user);
+			this.user = {
+				id: "",
+				name: "",
+				email: "",
+				tel: "",
+			};
+  }
 		},
 		components: {
 			'ValidationProvider': ValidationProvider
