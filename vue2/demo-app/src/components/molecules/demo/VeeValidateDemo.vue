@@ -1,37 +1,43 @@
 <template>
 	<div class="demo-wrap">
 		<h2>VeeValidate Demo</h2>
-		<ValidationProvider rules="secret" v-slot="{ errors }">
-			<input v-model="email" type="text">
-			<span>{{ errors[0] }}</span>
+		<ValidationObserver  ref="obs" v-slot="ObserverProps">
 
-			<v-sheet width="300" class="mb-10 ml-10">
-				<v-form validate-on="submit" @submit.prevent="submit">
-					<v-text-field
-						v-model="user.name"
-						:rules="rules"
-						:counter="50"
-						label="Name"
-						required
-					></v-text-field>
-					<v-text-field
-						v-model="user.email"
-						:rules="rules"
-						:counter="50"
-						label="Email"
-						required
-					></v-text-field>
-					<v-text-field
-						v-model="user.tel"
-						:rules="rules"
-						:counter="50"
-						label="Tel"
-						required
-					></v-text-field>
-					<v-btn type="submit" block class="mt-5">Register</v-btn>
-				</v-form>
-			</v-sheet>
-		</ValidationProvider>
+				<v-sheet width="300" class="mb-10 ml-10">
+					<ValidationProvider name="名前" rules="required">
+						<div slot-scope="ProviderProps">
+							<v-text-field
+								v-model="user.name"
+								:counter="50"
+								label="Name"
+							></v-text-field>
+							<p class="error">{{ ProviderProps.errors[0] }}</p>
+						</div>
+					</ValidationProvider>
+					
+					<ValidationProvider name="メールアドレス" rules="required|email">
+						<div slot-scope="ProviderProps">
+							<v-text-field
+								v-model="user.email"
+								:counter="50"
+								label="Email"
+							></v-text-field>
+							<p class="error">{{ ProviderProps.errors[0] }}</p>
+						</div>
+					</ValidationProvider>
+
+					<ValidationProvider name="電話番号" rules="required">
+						<v-text-field
+							v-model="user.tel"
+							:counter="50"
+							label="Tel"
+						></v-text-field>
+					</ValidationProvider>
+
+					<v-btn block class="mt-5" type="button" @click="submit" :disabled="ObserverProps.invalid || !ObserverProps.validated">Register</v-btn>
+				</v-sheet>
+			
+		</ValidationObserver>
 		<ul v-for="user in users" :key="user.id">
 			<li class="user-flex">
 				<p><span class="mr-2 font-weight-bold">ID:</span>{{ user.id }}</p>
@@ -45,12 +51,16 @@
 
 <script lang="ts">
   import Vue from 'vue'
-	import { ValidationProvider, extend } from 'vee-validate';
+	import { ValidationProvider, ValidationObserver, extend } from 'vee-validate';
+	import { required, email } from 'vee-validate/dist/rules';
 
 	extend('secret', {
 		validate: value => value === 'example',
 		message: 'This is not the magic word'
 	});
+
+	extend('required', required);
+	extend('email', email);	
 
 	export default Vue.extend({
 		name: 'VeeValidateDemo',
@@ -84,7 +94,8 @@
   }
 		},
 		components: {
-			'ValidationProvider': ValidationProvider
+			'ValidationProvider': ValidationProvider,
+			'ValidationObserver': ValidationObserver,
 		}
 	})
 </script>
