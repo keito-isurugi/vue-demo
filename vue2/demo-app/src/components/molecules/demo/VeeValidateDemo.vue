@@ -26,12 +26,15 @@
 						</div>
 					</ValidationProvider>
 
-					<ValidationProvider name="電話番号" rules="required">
-						<v-text-field
-							v-model="user.tel"
-							:counter="50"
-							label="Tel"
-						></v-text-field>
+					<ValidationProvider name="電話番号" :rules="{ regex: /^\d{3}-\d{4}-\d{4}$/ }">
+						<div slot-scope="ProviderProps">
+							<v-text-field
+								v-model="user.tel"
+								:counter="50"
+								label="Tel"
+							></v-text-field>
+							<p class="error">{{ ProviderProps.errors[0] }}</p>
+						</div>
 					</ValidationProvider>
 
 					<v-btn block class="mt-5" type="button" @click="submit" :disabled="ObserverProps.invalid || !ObserverProps.validated">Register</v-btn>
@@ -51,17 +54,17 @@
 
 <script lang="ts">
   import Vue from 'vue'
-	import { ValidationProvider, ValidationObserver, extend } from 'vee-validate';
-	import { required, email } from 'vee-validate/dist/rules';
-
-	extend('secret', {
-		validate: value => value === 'example',
-		message: 'This is not the magic word'
-	});
+	import { ValidationProvider, ValidationObserver, extend, localize } from 'vee-validate';
+	import { required, email, numeric, regex } from 'vee-validate/dist/rules';
+	import ja from "vee-validate/dist/locale/ja.json";
 
 	extend('required', required);
 	extend('email', email);	
+	extend('numeric', numeric);	
+	extend('regex', regex);	
 
+	localize('ja', ja);
+	
 	export default Vue.extend({
 		name: 'VeeValidateDemo',
 		data() {
